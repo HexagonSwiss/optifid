@@ -1,0 +1,14 @@
+.custom-button {
+    width: 278px;
+    height: 45px;
+    padding: 12px 20px 13px 20px;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 16px; /* Adjust font size */
+    text-align: center; /* Center the text */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+  }
