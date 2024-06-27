@@ -25,17 +25,22 @@ module.exports = {
         // => @media (min-width: 1280px) { ... }
       },
       colors: {
-        search_box: "#FCFCFC",
+        primary: "#D8F3D8",
         white: "#fff",
         black: "#000",
-        highlights: "#d74770",
-        primary: "#b32216",
       },
       backgroundImage: {
-         
+        background: ""
       },
       content: {
         logo: 'url("./assets/logo_optifid.png")',
+        imagelogo: 'url("./assets/logo_optfid.png")',
+      },
+      fontWeight: {
+        title: '700',
+        subtitle: '400',
+        normal: '400',
+        medium: '500',
       },
     },
     plugins: [],
