@@ -1,8 +1,7 @@
 <div class="page-container flex flex-col items-center justify-center h-screen">
-  <div class="background-container"></div>
-  <div class="w-20 content-imagelogo mb-4" ></div>
+  <div class="w-60 h-20 mb-4 bg-svg_logo bg-cover bg-center" ></div>
   <div class="button-container flex justify-between w-1/2">
-    <app-standard-button buttonText="Accedi" (clickEvent)="handleLoginClick()" class="bg-primary" ></app-standard-button>
-    <app-standard-button buttonText="Registrati" (clickEvent)="handleRegistrationClick()" class="bg-white"></app-standard-button>
+    <app-standard-button buttonText="Accedi" (clickEvent)="handleLoginClick()" class="bg-primary hover:bg-primaryHover hover:shadow-lg hover:shadow-black/33 rounded-full" ></app-standard-button>
+    <app-standard-button buttonText="Registrati" (clickEvent)="handleRegistrationClick()" class="bg-white border border-primary rounded-full hover:shadow-lg hover:shadow-black/33"></app-standard-button>
   </div>
 </div>

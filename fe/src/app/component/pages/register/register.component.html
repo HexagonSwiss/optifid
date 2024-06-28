@@ -1,1 +1,33 @@
-<p>register works!</p>
+<div class="page-container flex flex-col justify-center h-screen">
+  <div class="flex w-full h-full justify-between">
+    <div class="w-1/2 bg-primary p-8 flex items-center justify-center">
+      <div class="w-60 h-20 mb-4 bg-svg_logo bg-cover"> </div>
+    </div>
+    <div class="w-1/2 bg-white p-8 flex flex-col items-center justify-center">
+      <div class="flex flex-col">
+        <h1 class="text-black text-left text-4xl font-title">Benvenuto</h1>
+        <p class="text-black text-left text-l">Esegui la registrazione per accedere alla piattaforma Optifid.</p>
+        <app-form-field placeholder="Nome" type="text" [validation]="validateEmptyOrNull" (valueChange)="onFieldValueChange($event)"
+          [errorMessage]="'Per favore inserire il tuo nome.'" [submitted]="submitted"></app-form-field> 
+        <app-form-field placeholder="Cognome" type="text" [validation]="validateEmptyOrNull" (valueChange)="onFieldValueChange($event)"
+          [errorMessage]="'Per favore inserire il tuo cognome.'" [submitted]="submitted"></app-form-field>
+        <app-form-field placeholder="Email" type="email" [validation]="validateEmail" (valueChange)="onFieldValueChange($event)"
+          [errorMessage]="'Per favore inserire il tuo email.'" [submitted]="submitted"></app-form-field>
+        <app-form-field placeholder="Funzione" type="text" [validation]="validateEmptyOrNull" (valueChange)="onFieldValueChange($event)"
+          [errorMessage]="'Per favore inserire il tuo ruolo o funzione.'" [submitted]="submitted"></app-form-field>
+        <app-form-field placeholder="Ex: +041 XX-XXX-XX-XX" type="text" [validation]="validateEmptyOrNull" (valueChange)="onFieldValueChange($event)"
+          [errorMessage]="'Per favore inserire il tuo telefono.'" [submitted]="submitted"></app-form-field>
+        <app-password-form-field placeholder="Password" [(value)]="password"
+          (valueChange)="password = $event"></app-password-form-field>
+        <app-password-form-field placeholder="Conferma Password" [(value)]="password"
+          (valueChange)="password = $event"></app-password-form-field>
+      </div>
+      <app-standard-button buttonText="REGISTRATI" (clickEvent)="(validateForm())"
+        class="bg-primary hover:bg-primaryHover hover:shadow-lg hover:shadow-black/33 rounded-full mt-16"></app-standard-button>
+      <div class="flex flex-ln mt-10">
+        <p class="text-black text-left text-sm mr-3">Hai già un account?</p>
+        <button (click)="navigateToLogin()" class="text-primary text-left text-sm">Fai accesso</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,20 +9,20 @@ const User = sequelize.define('User', {
     primaryKey: true,
   },
   name: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   surname: {
     type: DataTypes.STRING
   },
   password: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    allowNull: false,
   }
 }, {
   tableName: 'user',
 });
 
-
-//sequelize.sync({ force: true });//elimina e ricrea
 sequelize.sync();
 
 module.exports = User; 

@@ -1,0 +1,13 @@
+<div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+    <div class="sm:col-span-3">
+      <div class="border-b border-gray-300">
+        <input [type]="type" [placeholder]="placeholder" [(ngModel)]="value"
+            (input)="onInputChange($event)"
+            [class.invalid]="!validation(value)"
+            class="block w-full py-2 pl-3 text-gray-900 placeholder:text-gray-400 outline-none">
+        <div *ngIf="!validation(value) && value !== ''">
+          <p class="text-red-500 text-xs">{{ errorMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

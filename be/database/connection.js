@@ -5,7 +5,7 @@ const path = require('path');
 
 const sequelize = new Sequelize('optified', 'root', '', {
     host: 'localhost',
-    dialect: 'mysql', 
+    dialect: 'mariadb', 
     port: '3306',
 });
   
