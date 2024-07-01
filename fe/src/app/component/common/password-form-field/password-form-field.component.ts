@@ -1,29 +1,26 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, signal, computed, Signal, input, model } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-password-form-field',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, FormsModule],
   templateUrl: './password-form-field.component.html',
   styleUrl: './password-form-field.component.scss'
 })
 export class PasswordFormFieldComponent {
-  @Input() placeholder!: string; // Placeholder text
-  @Input() value: string = ''; // Password value
-  @Output() valueChange = new EventEmitter<string>(); // Event to emit on value change
-  showPassword: boolean = false; // visibility state
-  faEye = faEye;
-  faEyeSlash = faEyeSlash;
+  placeholder = input.required<string>();
+  value = model<string>('');
+  valid = input<boolean>(true);
+  errorMessage = input<string>('');
+  showPassword = signal<boolean>(false);
+  type: Signal<string> = computed(() => this.showPassword() == true ? 'text' : 'password');
+  public faEye = faEye;
+  public faEyeSlash = faEyeSlash;
 
   togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
-
-  handleChange(event: Event) {
-    const inputElement = event.target as HTMLInputElement; // Cast to HTMLInputElement
-    this.value = inputElement.value; // Access the value property
-    this.valueChange.emit(this.value);
+    this.showPassword.update(value => !value);
   }
 }

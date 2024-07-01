@@ -19,11 +19,13 @@ module.exports = {
     colors: {
       primary: "#D8F3D8",
       primaryHover: "#C3E9C2",
+      secondary: "#F6F6F6",
       white: "#fff",
       black: "#000",
     },
     backgroundImage: {
       logo: 'url("./assets/logo_optfid.png")',
+      password_sent: 'url("./assets/email_read.png")',
       svg_logo: 'url("./assets/logo_optfid.svg")',
     },
     fontWeight: {
